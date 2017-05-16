@@ -11,7 +11,7 @@ export class PurchaseOrdersPage {
   public selectedItem: any;
   public items: Array<any>;
   public filteredItems: Array<any>;
-  public searchStr: string;
+  public searchStr: string = '';
 
   constructor(
     public navCtrl: NavController, 
@@ -43,6 +43,7 @@ export class PurchaseOrdersPage {
   refreshOrders(refresher){
       this.purchaseOrderService.getPurchaseOrders().subscribe(result => {
         this.items = result;
+        this.filteredItems = result;
         refresher.complete()
       })
   }
