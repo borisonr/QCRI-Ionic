@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar >
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Purchase Orders</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh) = "refreshOrders($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-row>
+        <ion-col>
+          <h4>
+            Order Description
+          </h4>
+        </ion-col>
+        <ion-col>
+          <h4>
+            Order Number
+          </h4>
+        </ion-col>
+      </ion-row>
+    <ion-item ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-row>
+        <ion-col>
+          {{item.itemDescription}}
+        </ion-col>
+        <ion-col>
+          {{item.orderNumber}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+</ion-content>

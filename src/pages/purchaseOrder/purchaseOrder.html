@@ -1,0 +1,64 @@
+<ion-header>
+ <ion-navbar>
+    <ion-title>{{selectedItem.itemDescription}}</ion-title>
+    <!--<ion-buttons end>
+        <button (click)="goHome()">
+            <ion-icon name="home"></ion-icon>
+        </button>
+    </ion-buttons>-->
+</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+    <ion-list-header>Order Details</ion-list-header>
+    <ion-row>
+        <ion-col>
+            Order Number
+        </ion-col>
+        <ion-col>
+            {{selectedItem.orderNumber}}
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            Order Description
+        </ion-col>
+        <ion-col>
+            {{selectedItem.itemDescription}}
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            Number of Parts
+        </ion-col>
+        <ion-col>
+            {{selectedItem.numberOfParts}}
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            Supplier Comments
+        </ion-col>
+        <ion-col>
+            {{selectedItem.supplierComments}}
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+           HazMat
+        </ion-col>
+        <ion-col>
+            {{selectedItem.hazMat}}
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+           Repair Order
+        </ion-col>
+        <ion-col>
+            {{selectedItem.repairOrder}}
+        </ion-col>
+    </ion-row>
+  </ion-list>
+</ion-content>
