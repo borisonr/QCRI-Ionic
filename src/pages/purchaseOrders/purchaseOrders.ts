@@ -8,9 +8,10 @@ import { PurchaseOrderService } from '../../shared/purchaseOrder.service';
   templateUrl: 'purchaseOrders.html'
 })
 export class PurchaseOrdersPage {
-  selectedItem: any;
-  icons: string[];
-  items: Array<{title: string, orderNumber: string/*, icon: string*/}>;
+  public selectedItem: any;
+  public items: Array<any>;
+  public filteredItems: Array<any>;
+  public searchStr: string;
 
   constructor(
     public navCtrl: NavController, 
@@ -27,6 +28,7 @@ export class PurchaseOrdersPage {
     loader.present().then(()=>{
       this.purchaseOrderService.getPurchaseOrders().subscribe(result => {
         this.items = result;
+        this.filteredItems = result;
         loader.dismiss()
       })
     })
@@ -43,5 +45,10 @@ export class PurchaseOrdersPage {
         this.items = result;
         refresher.complete()
       })
+  }
+
+  searchOrders(){
+    this.filteredItems = this.items.filter(c=>c.itemDescription.toLowerCase().indexOf(this.searchStr.toLowerCase()) > -1)
+    
   }
 }

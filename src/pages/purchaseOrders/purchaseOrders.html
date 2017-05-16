@@ -5,6 +5,12 @@
     </button>
     <ion-title>Purchase Orders</ion-title>
   </ion-navbar>
+  <ion-toolbar>
+    <ion-searchbar placeholder="Search" 
+    [(ngModel)]="searchStr"
+    (ionInput)="searchOrders()">
+    </ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
@@ -24,7 +30,7 @@
           </h4>
         </ion-col>
       </ion-row>
-    <ion-item ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+    <ion-item ion-item *ngFor="let item of filteredItems" (click)="itemTapped($event, item)">
       <ion-row>
         <ion-col>
           {{item.itemDescription}}
