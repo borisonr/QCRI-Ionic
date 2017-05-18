@@ -12,6 +12,7 @@ import { PurchaseOrderService } from '../shared/purchaseOrder.service';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { CommonQCRIModule } from 'qcri-common';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    CommonQCRIModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

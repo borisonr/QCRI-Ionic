@@ -9,6 +9,8 @@
 
 <ion-content padding>
   <h3>Welcome to the QCRI app</h3>
+  <h3>Test: {{test}}</h3>
+  <common-module></common-module>
   <button ion-button round outline (click)="scan()">Scan</button>
   <div *ngIf="results">
     <h2>Format: {{results.format}}</h2>
